@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexa Mobiles | Enquiry</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Nexa Mobiles</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="enquiry-form">
+            <h2>Enquire About a Model</h2>
+            <p>Interested in a specific iPhone or want a custom quote? Fill in the form below, or message us directly on WhatsApp — we usually reply fastest there.</p>
+
+            <!-- Client-side validation (required attributes) will be strengthened with JavaScript in Part 3 -->
+            <form action="#" method="post">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" required>
+
+                <label for="whatsapp">WhatsApp / Phone Number</label>
+                <input type="tel" id="whatsapp" name="whatsapp" required>
+
+                <label for="email">Email Address (optional)</label>
+                <input type="email" id="email" name="email">
+
+                <label for="model">iPhone Model of Interest</label>
+                <input type="text" id="model" name="model" placeholder="e.g. iPhone 14 Pro" required>
+
+                <label for="message">Message / Additional Details</label>
+                <textarea id="message" name="message" rows="5"></textarea>
+
+                <button type="submit">Send Enquiry</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Nexa Mobiles. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
