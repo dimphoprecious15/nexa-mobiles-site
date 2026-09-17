@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 956" width="375" height="956" font-family="Helvetica, Arial, sans-serif">
+<rect x="0" y="0" width="375" height="956" fill="#ffffff" stroke="#3a4250" stroke-width="2"/>
+<text x="16" y="24" font-size="16" fill="#3a4250" font-weight="bold">Wireframe — Products Page (Mobile, &lt;=480px) — grid collapses to 1 column</text>
+<rect x="0" y="0" width="375" height="56" fill="#1F3864" stroke="none" stroke-width="1.5" rx="4"/>
+<text x="14" y="34" font-size="15" fill="#ffffff" font-weight="bold">Nexa Mobiles</text>
+<rect x="331" y="16" width="28" height="24" fill="#2E5395" stroke="none" stroke-width="1.5" rx="3"/>
+<text x="337" y="34" font-size="12" fill="#ffffff">&#9776;</text>
+<rect x="16" y="72" width="343" height="60" fill="#e3e7ec" stroke="#3a4250" stroke-width="1.5" rx="4" stroke-dasharray="4,3"/>
+<rect x="28" y="86" width="200" height="10" fill="#5a6472" stroke="none" stroke-width="1.5" rx="2"/>
+<rect x="28" y="104" width="295" height="6" fill="#9aa4b2" stroke="none" stroke-width="1.5" rx="2"/>
+<rect x="28" y="116" width="206.5" height="6" fill="#9aa4b2" stroke="none" stroke-width="1.5" rx="2"/>
+<rect x="16" y="152" width="343" height="170" fill="#e3e7ec" stroke="#3a4250" stroke-width="1.5" rx="4"/>
+<rect x="28" y="164" width="319" height="80" fill="#9aa4b2" stroke="#3a4250" stroke-width="1.5" rx="4"/>
+<rect x="28" y="256" width="275" height="9" fill="#5a6472" stroke="none" stroke-width="1.5" rx="2"/>
+<rect x="28" y="274" width="295" height="6" fill="#9aa4b2" stroke="none" stroke-width="1.5" rx="2"/>
+<rect x="28" y="286" width="206.5" height="6" fill="#9aa4b2" stroke="none" stroke-width="1.5" rx="2"/>
+<rect x="16" y="338" width="343" height="170" fill="#e3e7ec" stroke="#3a4250" stroke-width="1.5" rx="4"/>
+<rect x="28" y="350" width="319" height="80" fill="#9aa4b2" stroke="#3a4250" stroke-width="1.5" rx="4"/>
+<rect x="28" y="442" width="275" height="9" fill="#5a6472" stroke="none" stroke-width="1.5" rx="2"/>
+<rect x="28" y="460" width="295" height="6" fill="#9aa4b2" stroke="none" stroke-width="1.5" rx="2"/>
+<rect x="28" y="472" width="206.5" height="6" fill="#9aa4b2" stroke="none" stroke-width="1.5" rx="2"/>
+<rect x="16" y="524" width="343" height="170" fill="#e3e7ec" stroke="#3a4250" stroke-width="1.5" rx="4"/>
+<rect x="28" y="536" width="319" height="80" fill="#9aa4b2" stroke="#3a4250" stroke-width="1.5" rx="4"/>
+<rect x="28" y="628" width="275" height="9" fill="#5a6472" stroke="none" stroke-width="1.5" rx="2"/>
+<rect x="28" y="646" width="295" height="6" fill="#9aa4b2" stroke="none" stroke-width="1.5" rx="2"/>
+<rect x="28" y="658" width="206.5" height="6" fill="#9aa4b2" stroke="none" stroke-width="1.5" rx="2"/>
+<rect x="16" y="710" width="343" height="170" fill="#e3e7ec" stroke="#3a4250" stroke-width="1.5" rx="4"/>
+<rect x="28" y="722" width="319" height="80" fill="#9aa4b2" stroke="#3a4250" stroke-width="1.5" rx="4"/>
+<rect x="28" y="814" width="275" height="9" fill="#5a6472" stroke="none" stroke-width="1.5" rx="2"/>
+<rect x="28" y="832" width="295" height="6" fill="#9aa4b2" stroke="none" stroke-width="1.5" rx="2"/>
+<rect x="28" y="844" width="206.5" height="6" fill="#9aa4b2" stroke="none" stroke-width="1.5" rx="2"/>
+<rect x="0" y="890" width="375" height="44" fill="#1F3864" stroke="none" stroke-width="1.5" rx="0"/>
+<text x="97.5" y="917.0" font-size="11" fill="#ffffff">&#169; 2026 Nexa Mobiles wireframe footer</text>
+</svg>

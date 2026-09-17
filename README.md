@@ -44,7 +44,23 @@ Home (index.html)
 All pages link to all other pages via the navigation menu.
 
 ## Changelog
-- **[Date]** — Initial project setup: folder structure, 5 HTML pages with basic content, starter CSS.
+Initial project setup: folder structure, 5 HTML pages with basic content, starter CSS.
+| Date | File | Change | Reason |
+|------|------|--------|--------|
+| 2026-09-16 | All HTML | Linked external style.css | Part 2 requirement |
+| 2026-09-16 | style.css | Added CSS reset and base styles | Desktop styling |
+| 2026-09-16 | style.css | Added Flexbox/Grid layout | Desktop layout structure |
+| 2026-09-16 | style.css | Added media queries | Responsive design for tablet/mobile |
+| 2026-09-16 | | README.md | Reformatted references to complete Harvard style | Part 1 Feedback (References) |
+| 2026-09-16 | README.md | Added wireframe descriptions and layout plans | Part 1 Feedback (Wireframes) |
+| 2026-09-16 | README.md | Revised timeline to be more realistic | Part 1 Feedback (Timeline) |
+| 2026-09-16 | README.md | Refined design aesthetic with consistent brand colours | Part 1 Feedback (Design Aesthetic) |
+| 2026-09-16 | README.md | Expanded current analysis with deeper market research | Part 1 Feedback (Analysis) |
+| 2026-09-16 | README.md | Added more detail to both project proposals | Part 1 Feedback (Proposals) | 
+## Responsive Testing
+* Desktop Screenshot: `screenshots/desktop.png`
+* Tablet Screenshot: `screenshots/tablet.png`
+* Mobile Screenshot: `screenshots/mobile.png`
 
 ## References
 - Apple Inc. (2026) *Apple South Africa*. Available at: https://www.apple.com/za/ (Accessed: 8 August 2026).

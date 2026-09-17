@@ -1,133 +1,436 @@
-/* Nexa Mobiles - Basic starter styles
-   This will be expanded significantly in Part 2 (CSS Styling & Responsive Design) */
+/* ==========================================================================
+   Nexa Mobiles — Stylesheet
+   Part 2: CSS Styling and Responsive Design (WEDE5020)
 
+   Contents:
+   1. Reset & base styles
+   2. Design tokens (custom properties)
+   3. Typography
+   4. Layout — header / nav / footer
+   5. Page sections (Home, About, Products, Enquiry, Contact)
+   6. Components — buttons, tables, forms, cards
+   7. Responsive breakpoints (tablet, mobile)
+   ========================================================================== */
+
+/* ---- 1. Reset & base styles ------------------------------------------- */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #222;
-    line-height: 1.5;
+html {
+    scroll-behavior: smooth;
 }
 
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ---- 2. Design tokens --------------------------------------------------
+   Palette taken from the project proposal (blue & white brand colours),
+   split into two blue values so text/background pairs keep enough
+   contrast, plus a pale tint for section backgrounds. */
+:root {
+    --color-navy: #0F2A4A;       /* header / footer / primary text on light bg */
+    --color-blue: #1D4E89;       /* links, secondary accents */
+    --color-blue-bright: #2F6FD1;/* hover / focus / active states */
+    --color-ice: #EAF1FB;        /* tinted section backgrounds */
+    --color-line: #D7E1EE;       /* borders, table rules */
+    --color-white: #FFFFFF;
+    --color-ink: #16202B;        /* body text */
+    --color-muted: #55647A;      /* secondary text */
+
+    --font-heading: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+    --font-body: 'Open Sans', Arial, sans-serif;
+
+    --radius: 6px;
+    --gap: 1.5rem;
+    --max-width: 1120px;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    line-height: 1.6;
+    background-color: var(--color-white);
+}
+
+/* ---- 3. Typography ------------------------------------------------------ */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--color-navy);
+    line-height: 1.25;
+}
+
+h1 { font-size: 1.75rem; font-weight: 700; }
+h2 { font-size: clamp(1.5rem, 1.1rem + 1.5vw, 2.25rem); font-weight: 700; margin-bottom: 0.75rem; }
+h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
+
+p { margin-bottom: 1rem; max-width: 70ch; }
+
+a {
+    color: var(--color-blue);
+}
+
+a:hover,
+a:focus-visible {
+    color: var(--color-blue-bright);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--color-blue-bright);
+    outline-offset: 2px;
+}
+
+/* ---- 4. Layout — header / nav / footer --------------------------------- */
 header {
-    background-color: #1F3864;
-    color: #ffffff;
-    padding: 1rem 2rem;
+    background-color: var(--color-navy);
+    color: var(--color-white);
+    padding: 1rem clamp(1rem, 4vw, 2.5rem);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 header h1 {
-    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    color: var(--color-white);
+    margin: 0;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 nav a {
-    color: #ffffff;
+    display: inline-block;
+    color: var(--color-white);
     text-decoration: none;
+    padding: 0.4rem 0.75rem;
+    border-radius: var(--radius);
+    transition: background-color 0.15s ease;
 }
 
-nav a:hover {
-    text-decoration: underline;
+nav a:hover,
+nav a:focus-visible {
+    background-color: var(--color-blue);
+    color: var(--color-white);
 }
 
 main {
-    padding: 2rem;
-    max-width: 900px;
+    padding: clamp(1.25rem, 4vw, 2.5rem);
+    max-width: var(--max-width);
     margin: 0 auto;
 }
 
-h2, h3 {
-    color: #1F3864;
-    margin-bottom: 0.75rem;
-    margin-top: 1.5rem;
+main > section {
+    margin-bottom: clamp(2rem, 5vw, 3rem);
 }
 
-.cta-button {
-    display: inline-block;
-    background-color: #1F3864;
-    color: #ffffff;
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
-    border-radius: 4px;
-    margin-top: 1rem;
+footer {
+    text-align: center;
+    padding: 1.25rem;
+    background-color: var(--color-navy);
+    color: var(--color-white);
+    margin-top: 2rem;
 }
 
-.product-photo {
-    max-width: 300px;
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-    margin-bottom: 0.75rem;
+footer p { margin-bottom: 0; }
+
+/* ---- 5. Page sections ---------------------------------------------------- */
+
+/* Home — hero uses a two-column grid: copy on the left, an accent panel
+   on the right that stands in for product photography. */
+.hero {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--gap);
+    align-items: center;
+    background-color: var(--color-ice);
+    border-radius: var(--radius);
+    padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.hero::after {
+    content: "";
     display: block;
+    min-height: 180px;
+    background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-navy) 100%);
+    border-radius: var(--radius);
+}
+
+.hero h2 { max-width: 20ch; }
+
+.intro, .featured {
+    background-color: var(--color-ice);
+    border-left: 4px solid var(--color-blue);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+}
+
+/* About — mission and vision sit side by side on wide screens */
+.mission-vision {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gap);
+}
+
+.mission-vision h3:nth-of-type(2) { grid-column: 2; grid-row: 1; }
+.mission-vision p:nth-of-type(2) { grid-column: 2; grid-row: 2; }
+
+.why-choose-us ul {
+    list-style: none;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.why-choose-us li {
+    padding-left: 1.75rem;
+    position: relative;
+}
+
+.why-choose-us li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.35em;
+    width: 0.9em;
+    height: 0.9em;
+    background-color: var(--color-blue-bright);
+    border-radius: 2px;
+}
+
+/* Products — price list intro + a responsive grid of series cards */
+.products-intro {
+    background-color: var(--color-ice);
+    border-radius: var(--radius);
+    padding: 1.5rem;
 }
 
 .price-list-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 6px;
     margin-top: 1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--color-line);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--gap);
+}
+
+.product-series {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-line);
+    border-top: 4px solid var(--color-blue);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+}
+
+.product-series.accessories {
+    border-top-color: var(--color-navy);
+}
+
+.enquire-note {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+/* Contact — details/form and the embedded map sit in a two-column grid */
+.map iframe {
+    border-radius: var(--radius);
+    border: 1px solid var(--color-line);
+}
+
+.contact-details ul {
+    list-style: none;
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap);
+}
+
+.contact-layout .contact-details,
+.contact-layout .contact-form {
+    grid-column: 1;
+}
+
+.contact-layout .map {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+}
+
+/* ---- 6. Components -------------------------------------------------------- */
+
+.cta-button,
+button[type="submit"] {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border: none;
+    border-radius: var(--radius);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.cta-button:hover,
+.cta-button:focus-visible,
+button[type="submit"]:hover,
+button[type="submit"]:focus-visible {
+    background-color: var(--color-blue-bright);
+    color: var(--color-white);
+}
+
+.cta-button:active,
+button[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+.product-photo {
+    max-width: 100%;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin-bottom: 0.75rem;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
 }
 
 th, td {
     text-align: left;
-    padding: 0.5rem;
-    border-bottom: 1px solid #ddd;
+    padding: 0.6rem 0.5rem;
+    border-bottom: 1px solid var(--color-line);
 }
 
 th {
-    background-color: #D9E2F3;
+    background-color: var(--color-ice);
+    font-family: var(--font-heading);
+    color: var(--color-navy);
+}
+
+tr:hover td {
+    background-color: var(--color-ice);
 }
 
 form {
     display: flex;
     flex-direction: column;
-    max-width: 500px;
+    max-width: 32rem;
+    gap: 0.25rem;
 }
 
 label {
     margin-top: 1rem;
-    font-weight: bold;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
 }
 
 input, textarea {
-    padding: 0.5rem;
-    margin-top: 0.25rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-ink);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-button {
+input:hover, textarea:hover {
+    border-color: var(--color-blue);
+}
+
+input:focus, textarea:focus {
+    border-color: var(--color-blue-bright);
+    box-shadow: 0 0 0 3px rgba(47, 111, 209, 0.2);
+    outline: none;
+}
+
+button[type="submit"] {
     margin-top: 1.5rem;
-    padding: 0.75rem;
-    background-color: #1F3864;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    align-self: flex-start;
 }
 
-button:hover {
-    background-color: #2E5395;
+/* ---- 7. Responsive breakpoints --------------------------------------------
+   Desktop-first build (Part 2 focuses on the desktop solution); these
+   breakpoints adapt the layout down for tablet and mobile screens. */
+
+/* Tablet and small laptop */
+@media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero::after { min-height: 120px; order: -1; }
+    .products-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 }
 
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #1F3864;
-    color: #ffffff;
-    margin-top: 2rem;
+/* Tablet portrait */
+@media (max-width: 768px) {
+    header { flex-direction: column; align-items: flex-start; }
+    nav ul { gap: 0.35rem; }
+    .mission-vision { grid-template-columns: 1fr; }
+    .mission-vision h3:nth-of-type(2),
+    .mission-vision p:nth-of-type(2) { grid-column: 1; grid-row: auto; }
+
+    .contact-layout { grid-template-columns: 1fr; }
+    .contact-layout .map { grid-column: 1; grid-row: auto; }
+
+    /* These price-list tables use plain <tr><th>...</tr> header rows with
+       no <thead>, so the header row is hidden directly and each data cell
+       is re-labelled via its data-label attribute instead. */
+    table, tbody, td, tr { display: block; }
+    tr:has(th) { display: none; }
+    tr { border-bottom: 2px solid var(--color-line); padding: 0.5rem 0; }
+    td {
+        border-bottom: none;
+        padding: 0.3rem 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+    td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--color-navy);
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    html { font-size: 15px; }
+    header { padding: 1rem; }
+    nav ul { flex-direction: column; width: 100%; }
+    nav a { display: block; }
+    main { padding: 1rem; }
+    .cta-button, button[type="submit"] { width: 100%; justify-content: center; }
+    .product-photo { height: 180px; }
 }
