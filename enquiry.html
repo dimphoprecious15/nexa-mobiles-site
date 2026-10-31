@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexa Mobiles | Enquiry</title>
+    <title>Nexa Mobiles | Buy New and Pre-Owned iPhones in Johannesburg</title>
+
+    <meta name="description" content="Enquire about new and pre-owned iPhones at Nexa Mobiles. Get an estimated price and availability for your chosen model.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -24,27 +29,58 @@
     <main>
         <section class="enquiry-form">
             <h2>Enquire About a Model</h2>
-            <p>Interested in a specific iPhone or want a custom quote? Fill in the form below, or message us directly on WhatsApp — we usually reply fastest there.</p>
+            <p>Interested in a specific iPhone? Fill in the form below to get an estimated price and availability straight away, or message us on WhatsApp.</p>
 
-            <!-- Client-side validation (required attributes) will be strengthened with JavaScript in Part 3 -->
-            <form action="#" method="post">
+            <form id="enquiryForm" action="#" method="post" novalidate>
                 <label for="fullname">Full Name</label>
-                <input type="text" id="fullname" name="fullname" required>
+                <input type="text" id="fullname" name="fullname" minlength="2" maxlength="60" required>
+                <span class="error" id="fullname-error" role="alert"></span>
 
                 <label for="whatsapp">WhatsApp / Phone Number</label>
-                <input type="tel" id="whatsapp" name="whatsapp" required>
+                <input type="tel" id="whatsapp" name="whatsapp" placeholder="e.g. 072 123 4567" required>
+                <span class="error" id="whatsapp-error" role="alert"></span>
 
                 <label for="email">Email Address (optional)</label>
                 <input type="email" id="email" name="email">
+                <span class="error" id="email-error" role="alert"></span>
 
                 <label for="model">iPhone Model of Interest</label>
-                <input type="text" id="model" name="model" placeholder="e.g. iPhone 14 Pro" required>
+                <select id="model" name="model" required>
+                    <option value="">-- Select a model --</option>
+                    <option value="iphone13">iPhone 13</option>
+                    <option value="iphone14">iPhone 14</option>
+                    <option value="iphone14pro">iPhone 14 Pro</option>
+                    <option value="iphone15">iPhone 15</option>
+                    <option value="iphone15pro">iPhone 15 Pro</option>
+                </select>
+                <span class="error" id="model-error" role="alert"></span>
+
+                <label for="storage">Storage</label>
+                <select id="storage" name="storage" required>
+                    <option value="">-- Select storage --</option>
+                    <option value="128">128 GB</option>
+                    <option value="256">256 GB</option>
+                    <option value="512">512 GB</option>
+                </select>
+                <span class="error" id="storage-error" role="alert"></span>
+
+                <label for="condition">Condition</label>
+                <select id="condition" name="condition" required>
+                    <option value="">-- Select condition --</option>
+                    <option value="new">New</option>
+                    <option value="preowned">Pre-owned</option>
+                </select>
+                <span class="error" id="condition-error" role="alert"></span>
 
                 <label for="message">Message / Additional Details</label>
-                <textarea id="message" name="message" rows="5"></textarea>
+                <textarea id="message" name="message" rows="5" maxlength="300"></textarea>
+                <small id="charCount">0 / 300</small>
+                <span class="error" id="message-error" role="alert"></span>
 
                 <button type="submit">Send Enquiry</button>
             </form>
+
+            <div id="enquiryResult" class="enquiry-result" aria-live="polite" hidden></div>
         </section>
     </main>
 
@@ -52,5 +88,6 @@
         <p>&copy; 2026 Nexa Mobiles. All rights reserved.</p>
     </footer>
 
+    <script src="js/enquiry.js"></script>
 </body>
 </html>

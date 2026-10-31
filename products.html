@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexa Mobiles | Products</title>
+    <title>iPhone Price List | Nexa Mobiles Johannesburg</title>
+<meta name="description" content="Browse our iPhone price list from iPhone X to iPhone 16 Pro Max. Search and sort by price, then enquire or message us on WhatsApp.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -25,101 +29,127 @@
         <section class="products-intro">
             <h2>iPhone Price List</h2>
             <p>Trusted iPhone specialists based in Johannesburg, with nationwide delivery. Stock changes regularly — message us on WhatsApp to confirm current availability.</p>
-            <img src="images/price-list.jpeg" alt="Nexa Mobiles official iPhone price list" class="price-list-image">
+            <!-- Responsive image: picture + source so mobile screens download the
+                 smaller 480w file instead of the full-size image. -->
+            <picture>
+                <source media="(max-width: 600px)" srcset="images/price-list-480w.jpg">
+                <source media="(max-width: 1024px)" srcset="images/price-list-900w.jpg">
+                <img src="images/price-list.jpeg" alt="Nexa Mobiles official iPhone price list" class="price-list-image">
+            </picture>
         </section>
 
-        <!-- X / XR Series -->
-        <section class="product-series">
-            <h3>X &middot; XR (2017&ndash;19)</h3>
-            <table>
-                <tr><th>Model</th><th>Storage</th><th>Price</th></tr>
-                <tr><td>iPhone X</td><td>64GB</td><td>R3,500</td></tr>
-                <tr><td>iPhone XR</td><td>64GB</td><td>R4,000</td></tr>
-                <tr><td>iPhone XR</td><td>128GB</td><td>R4,500</td></tr>
-            </table>
-        </section>
+        <div class="products-grid">
 
-        <!-- 11 Series -->
-        <section class="product-series">
-            <h3>11 Series (2019)</h3>
-            <img src="images/iphone-17.jpeg" alt="Nexa Mobiles iPhone 11 stock, boxed and unboxed" class="product-photo">
-            <table>
-                <tr><th>Model</th><th>Storage</th><th>Price</th></tr>
-                <tr><td>iPhone 11</td><td>64GB</td><td>R4,900</td></tr>
-                <tr><td>iPhone 11</td><td>128GB</td><td>R5,400</td></tr>
-                <tr><td>iPhone 11 Pro</td><td>64GB</td><td>R6,000</td></tr>
-                <tr><td>iPhone 11 Pro</td><td>128GB</td><td>R6,400</td></tr>
-                <tr><td>iPhone 11 Pro Max</td><td>64GB</td><td>R7,300</td></tr>
-            </table>
-        </section>
+            <!-- X / XR Series -->
+            <section class="product-series">
+                <h3>X &middot; XR (2017&ndash;19)</h3>
+                <table>
+                    <tr><th>Model</th><th>Storage</th><th>Price</th></tr>
+                    <tr><td data-label="Model">iPhone X</td><td data-label="Storage">64GB</td><td data-label="Price">R3,500</td></tr>
+                    <tr><td data-label="Model">iPhone XR</td><td data-label="Storage">64GB</td><td data-label="Price">R4,000</td></tr>
+                    <tr><td data-label="Model">iPhone XR</td><td data-label="Storage">128GB</td><td data-label="Price">R4,500</td></tr>
+                </table>
+            </section>
 
-        <!-- 12 Series -->
-        <section class="product-series">
-            <h3>12 Series (2020)</h3>
-            <img src="images/iphone-12.jpeg" alt="Nexa Mobiles iPhone 12 with charger and cover" class="product-photo">
-            <table>
-                <tr><th>Model</th><th>Storage</th><th>Price</th></tr>
-                <tr><td>iPhone 12</td><td>Standard</td><td>R6,200</td></tr>
-                <tr><td>iPhone 12 Pro</td><td>Standard</td><td>R8,600</td></tr>
-                <tr><td>iPhone 12 Pro Max</td><td>Standard</td><td>R9,700</td></tr>
-            </table>
-        </section>
+            <!-- 11 Series -->
+            <section class="product-series">
+                <h3>11 Series (2019)</h3>
+                <img
+                    src="images/iphone-17-800w.jpg"
+                    srcset="images/iphone-17-400w.jpg 400w, images/iphone-17-800w.jpg 800w, images/iphone-17.jpeg 1080w"
+                    sizes="(max-width: 480px) 90vw, (max-width: 900px) 45vw, 260px"
+                    alt="Nexa Mobiles iPhone 11 stock, boxed and unboxed" class="product-photo">
+                <table>
+                    <tr><th>Model</th><th>Storage</th><th>Price</th></tr>
+                    <tr><td data-label="Model">iPhone 11</td><td data-label="Storage">64GB</td><td data-label="Price">R4,900</td></tr>
+                    <tr><td data-label="Model">iPhone 11</td><td data-label="Storage">128GB</td><td data-label="Price">R5,400</td></tr>
+                    <tr><td data-label="Model">iPhone 11 Pro</td><td data-label="Storage">64GB</td><td data-label="Price">R6,000</td></tr>
+                    <tr><td data-label="Model">iPhone 11 Pro</td><td data-label="Storage">128GB</td><td data-label="Price">R6,400</td></tr>
+                    <tr><td data-label="Model">iPhone 11 Pro Max</td><td data-label="Storage">64GB</td><td data-label="Price">R7,300</td></tr>
+                </table>
+            </section>
 
-        <!-- 13 Series -->
-        <section class="product-series">
-            <h3>13 Series (2021)</h3>
-            <img src="images/iphone 13.jpeg" alt="Nexa Mobiles iPhone 13 in stock" class="product-photo">
-            <table>
-                <tr><th>Model</th><th>Storage</th><th>Price</th></tr>
-                <tr><td>iPhone 13</td><td>Standard</td><td>R7,300</td></tr>
-                <tr><td>iPhone 13 Pro</td><td>Standard</td><td>R10,000</td></tr>
-                <tr><td>iPhone 13 Pro Max</td><td>Standard</td><td>R11,500</td></tr>
-            </table>
-        </section>
+            <!-- 12 Series -->
+            <section class="product-series">
+                <h3>12 Series (2020)</h3>
+                <img
+                    src="images/iphone-12-800w.jpg"
+                    srcset="images/iphone-12-400w.jpg 400w, images/iphone-12-800w.jpg 800w, images/iphone-12.jpeg 1080w"
+                    sizes="(max-width: 480px) 90vw, (max-width: 900px) 45vw, 260px"
+                    alt="Nexa Mobiles iPhone 12 with charger and cover" class="product-photo">
+                <table>
+                    <tr><th>Model</th><th>Storage</th><th>Price</th></tr>
+                    <tr><td data-label="Model">iPhone 12</td><td data-label="Storage">Standard</td><td data-label="Price">R6,200</td></tr>
+                    <tr><td data-label="Model">iPhone 12 Pro</td><td data-label="Storage">Standard</td><td data-label="Price">R8,600</td></tr>
+                    <tr><td data-label="Model">iPhone 12 Pro Max</td><td data-label="Storage">Standard</td><td data-label="Price">R9,700</td></tr>
+                </table>
+            </section>
 
-        <!-- 14 Series -->
-        <section class="product-series">
-            <h3>14 Series (2022)</h3>
-            <table>
-                <tr><th>Model</th><th>Storage</th><th>Price</th></tr>
-                <tr><td>iPhone 14</td><td>Standard</td><td>R9,500</td></tr>
-                <tr><td>iPhone 14 Pro</td><td>Standard</td><td>R12,500</td></tr>
-                <tr><td>iPhone 14 Pro Max</td><td>Standard</td><td>R13,500</td></tr>
-            </table>
-        </section>
+            <!-- 13 Series -->
+            <section class="product-series">
+                <h3>13 Series (2021)</h3>
+                <img
+                    src="images/iphone-13-800w.jpg"
+                    srcset="images/iphone-13-400w.jpg 400w, images/iphone-13-800w.jpg 800w, images/iphone-13.jpeg 1080w"
+                    sizes="(max-width: 480px) 90vw, (max-width: 900px) 45vw, 260px"
+                    alt="Nexa Mobiles iPhone 13 in stock" class="product-photo">
+                <table>
+                    <tr><th>Model</th><th>Storage</th><th>Price</th></tr>
+                    <tr><td data-label="Model">iPhone 13</td><td data-label="Storage">Standard</td><td data-label="Price">R7,300</td></tr>
+                    <tr><td data-label="Model">iPhone 13 Pro</td><td data-label="Storage">Standard</td><td data-label="Price">R10,000</td></tr>
+                    <tr><td data-label="Model">iPhone 13 Pro Max</td><td data-label="Storage">Standard</td><td data-label="Price">R11,500</td></tr>
+                </table>
+            </section>
 
-        <!-- 15 Series -->
-        <section class="product-series">
-            <h3>15 Series (2023)</h3>
-            <table>
-                <tr><th>Model</th><th>Storage</th><th>Price</th></tr>
-                <tr><td>iPhone 15</td><td>Standard</td><td>R11,200</td></tr>
-                <tr><td>iPhone 15 Pro</td><td>Standard</td><td>R15,500</td></tr>
-                <tr><td>iPhone 15 Pro Max</td><td>Standard</td><td>R17,000</td></tr>
-            </table>
-        </section>
+            <!-- 14 Series -->
+            <section class="product-series">
+                <h3>14 Series (2022)</h3>
+                <table>
+                    <tr><th>Model</th><th>Storage</th><th>Price</th></tr>
+                    <tr><td data-label="Model">iPhone 14</td><td data-label="Storage">Standard</td><td data-label="Price">R9,500</td></tr>
+                    <tr><td data-label="Model">iPhone 14 Pro</td><td data-label="Storage">Standard</td><td data-label="Price">R12,500</td></tr>
+                    <tr><td data-label="Model">iPhone 14 Pro Max</td><td data-label="Storage">Standard</td><td data-label="Price">R13,500</td></tr>
+                </table>
+            </section>
 
-        <!-- 16 Series -->
-        <section class="product-series">
-            <h3>16 Series &mdash; Newest In Stock (2024)</h3>
-            <table>
-                <tr><th>Model</th><th>Storage</th><th>Price</th></tr>
-                <tr><td>iPhone 16</td><td>Standard</td><td>R14,000</td></tr>
-                <tr><td>iPhone 16 Pro</td><td>Standard</td><td>R18,000</td></tr>
-                <tr><td>iPhone 16 Pro Max</td><td>Standard</td><td>R20,500</td></tr>
-            </table>
-        </section>
+            <!-- 15 Series -->
+            <section class="product-series">
+                <h3>15 Series (2023)</h3>
+                <table>
+                    <tr><th>Model</th><th>Storage</th><th>Price</th></tr>
+                    <tr><td data-label="Model">iPhone 15</td><td data-label="Storage">Standard</td><td data-label="Price">R11,200</td></tr>
+                    <tr><td data-label="Model">iPhone 15 Pro</td><td data-label="Storage">Standard</td><td data-label="Price">R15,500</td></tr>
+                    <tr><td data-label="Model">iPhone 15 Pro Max</td><td data-label="Storage">Standard</td><td data-label="Price">R17,000</td></tr>
+                </table>
+            </section>
 
-        <!-- Accessories -->
-        <section class="product-series accessories">
-            <h3>Accessories</h3>
-            <img src="images/airpods-pro.jpeg" alt="Nexa Mobiles AirPods Pro stock" class="product-photo">
-            <table>
-                <tr><th>Item</th><th>Price</th></tr>
-                <tr><td>AirPods Pro</td><td>R[300]</td></tr>
-                <tr><td>Lightning to USB Cable</td><td>R[150]</td></tr>
-            </table>
-        </section>
+            <!-- 16 Series -->
+            <section class="product-series">
+                <h3>16 Series &mdash; Newest In Stock (2024)</h3>
+                <table>
+                    <tr><th>Model</th><th>Storage</th><th>Price</th></tr>
+                    <tr><td data-label="Model">iPhone 16</td><td data-label="Storage">Standard</td><td data-label="Price">R14,000</td></tr>
+                    <tr><td data-label="Model">iPhone 16 Pro</td><td data-label="Storage">Standard</td><td data-label="Price">R18,000</td></tr>
+                    <tr><td data-label="Model">iPhone 16 Pro Max</td><td data-label="Storage">Standard</td><td data-label="Price">R20,500</td></tr>
+                </table>
+            </section>
+
+            <!-- Accessories -->
+            <section class="product-series accessories">
+                <h3>Accessories</h3>
+                <img
+                    src="images/airpods-pro-800w.jpg"
+                    srcset="images/airpods-pro-400w.jpg 400w, images/airpods-pro-800w.jpg 800w, images/airpods-pro.jpeg 1080w"
+                    sizes="(max-width: 480px) 90vw, (max-width: 900px) 45vw, 260px"
+                    alt="Nexa Mobiles AirPods Pro stock" class="product-photo">
+                <table>
+                    <tr><th>Item</th><th>Price</th></tr>
+                    <tr><td data-label="Item">AirPods Pro</td><td data-label="Price">R[300]</td></tr>
+                    <tr><td data-label="Item">Lightning to USB Cable</td><td data-label="Price">R[150]</td></tr>
+                </table>
+            </section>
+
+        </div>
 
         <p class="enquire-note">Interested in a model? <a href="enquiry.html">Enquire here</a> or message us on WhatsApp.</p>
     </main>
@@ -127,6 +157,7 @@
     <footer>
         <p>&copy; 2026 Nexa Mobiles. All rights reserved.</p>
     </footer>
+    <script src="js/products.js"></script>
 
 </body>
 </html>
