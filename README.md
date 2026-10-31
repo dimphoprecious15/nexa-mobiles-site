@@ -89,6 +89,7 @@ Following Part 1 feedback (92/100), the following corrections were made to `Prop
 
 -**27 Oct 2026, products.html: Added JavaScript product search, price sorting, collapsible accordion series sections, a click-to-enlarge image lightbox, and scroll fade-in animations (products.js).
 - **31 Oct 2026, SEO:** Added keyword-based title tags and meta descriptions to all five pages, created robots.txt and sitemap.xml, and checked image alt text and heading structure. Keywords targeted: buy iPhone Johannesburg, pre-owned iPhone Johannesburg, iPhone price list South Africa.
+- **31 Oct 2026, Deployment:** Deployed the website on Netlify. Live site: https://stellar-gumdrop-c832cb.netlify.app. Updated robots.txt and sitemap.xml with the live address.
 
 ## References
 - Apple Inc. (2026) *Apple South Africa*. Available at: https://www.apple.com/za/ (Accessed: 8 August 2026).
@@ -98,4 +99,5 @@ Following Part 1 feedback (92/100), the following corrections were made to `Prop
 - Mozilla Developer Network (2026) *CSS Grid Layout*. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout (Accessed: 2 September 2026).
 - Mozilla Developer Network (2026) *Responsive images*. Available at: https://developer.mozilla.org/en-US/docs/Web/HTML/Responsive_images (Accessed: 2 September 2026).
 - The Independent Institute of Education (2026) *WEDE5020 Web Development Module Manual*. Johannesburg: The IIE.
+- Netlify (2026) *Netlify Drop*. Available at: https://app.netlify.com/drop (Accessed: 31 October 2026).
 
