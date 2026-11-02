@@ -2,15 +2,15 @@
 
 ## Student Information
 - **Name:** Dimpho Makhene
-- **Student Number:** [ST10501982]
+- **Student Number:** ST10501982
 - **Module:** WEDE5020 — Web Development (Introduction)
 - **Assessment:** Portfolio of Evidence (PoE)
 
 ## Project Overview
 Nexa Mobiles is a South African-based retailer selling genuine new and pre-owned Apple iPhones. This project is a functional, responsive, SEO-optimised 5-page website built for Nexa Mobiles as part of the WEDE5020 PoE, developed across three parts:
 - **Part 1:** HTML structure and content — submitted, 92/100
-- **Part 2:** CSS styling and responsive design (current stage)
-- **Part 3:** JavaScript functionality and SEO
+- **Part 2:** CSS styling and responsive design
+- **Part 3:** JavaScript functionality, SEO and deployment (current stage)
 
 ## Website Goals and Objectives
 - Establish a professional online presence beyond social media.
@@ -25,8 +25,12 @@ Nexa Mobiles is a South African-based retailer selling genuine new and pre-owned
 - CSS Grid and Flexbox layout throughout (hero, product catalogue, contact page, forms)
 - Fully responsive: breakpoints for desktop, tablet, and mobile; tables reflow into stacked cards on small screens
 - Responsive images: `srcset`/`sizes` on product photos, `<picture>` on the price-list graphic
-- Enquiry form and contact form (client-side validation to be added in Part 3)
-- Embedded map on the Contact page
+- Enquiry form with JavaScript validation and an instant price and availability response
+- Contact form with JavaScript validation, a compiled email message and AJAX submission (Formspree)
+- Products page with live search, price sorting, accordion sections, image lightbox and scroll animations
+- Embedded Google Map on the Contact page
+- SEO: keyword titles, meta descriptions, robots.txt and sitemap.xml
+- Deployed on Netlify
 
 ## Timeline and Milestones
 See **Section 8 (Timeline and Milestones)** of `Proposal2_Nexa_Mobiles.docx` for the detailed, week-by-week breakdown covering all three PoE parts.
@@ -42,6 +46,27 @@ Part 2 covers the CSS styling and responsive design of the site, and implementin
 - Responsive breakpoints at 900px, 768px, and 480px, using relative units (`rem`, `%`, `clamp()`)
 - Responsive images via `srcset`/`sizes` and `<picture>`
 - Screenshots of desktop, tablet, and mobile views: see `/screenshots` *(add your own browser dev-tools screenshots here before submission)*
+
+## Part 3 Details
+Part 3 adds JavaScript functionality, SEO and deployment.
+
+**Live site:** https://stellar-gumdrop-c832cb.netlify.app
+
+### JavaScript features
+- `js/enquiry.js`: validates name, South African phone number, optional email, model, storage, condition and a 300-character message with inline error messages. After validation it shows an estimated price and stock availability for the chosen model.
+- `js/contact.js`: validates name, email, phone, message type and a 10 to 500 character message. The details are compiled into an email addressed to the business, which the customer can send with one click. The form is also submitted with AJAX (Formspree), with the email draft as a fallback.
+- `js/products.js`: product search, price sorting, collapsible accordion series sections, an image lightbox, dynamic DOM-built controls and scroll fade-in animations.
+
+### SEO
+- **Keywords:** buy iPhone Johannesburg, pre-owned iPhone Johannesburg, iPhone price list South Africa, second-hand iPhone Alexandra, iPhone Alexandra Johannesburg.
+- **On-page:** unique title tag and meta description on every page, heading structure, descriptive alt text on all images, clean lowercase URLs, internal links between pages and a mobile-friendly responsive layout.
+- **Off-page (planned):** backlinks from local business directories and suppliers, promotion on WhatsApp Status, Facebook and Instagram, and a Google Business Profile for Nexa Mobiles, Alexandra, Johannesburg.
+- **robots.txt and sitemap.xml:** both added in the project root and pointing to the live address.
+- **Page speed:** responsive image variants (`srcset` and `<picture>`), lazy-loaded map, and font preconnect.
+- **Security:** the site is served over HTTPS by Netlify, user input is validated on the client and escaped before it is shown on the page, and no secrets are stored in the code.
+
+### Deployment
+The site is deployed on Netlify (free plan) and the source code is kept in a private GitHub repository.
 
 ## Sitemap
 ```
@@ -83,13 +108,13 @@ Following Part 1 feedback (92/100), the following corrections were made to `Prop
 - **17 Sep 2026** — Removed a premature `:invalid` red-border style that fired on empty required fields before the user had interacted with them.
 
 ### Part 3
-- **25 Oct 2026, enquiry.html:** Added JavaScript validation (name, SA phone format, optional email, required dropdowns, 300-character message counter) with inline error messages. Added an instant price and availability response based on the selected model, storage and condition.
-
-- **25 Oct 2026, contact.html:** Added JavaScript validation (name, email, SA phone format, message type, 10 to 500 character message) with inline errors. The validated details are compiled into an email draft addressed to the business. Replaced the map placeholder with an embedded Google Map of Alexandra, Johannesburg.
-
--**27 Oct 2026, products.html: Added JavaScript product search, price sorting, collapsible accordion series sections, a click-to-enlarge image lightbox, and scroll fade-in animations (products.js).
+- **25 Oct 2026, enquiry.html:** Added JavaScript validation (name, SA phone format, optional email, required dropdowns, 300-character message counter) with inline error messages. Added an instant price and availability response based on the selected model, storage and condition (enquiry.js).
+- **25 Oct 2026, contact.html:** Added JavaScript validation (name, email, SA phone format, message type, 10 to 500 character message) with inline errors. The validated details are compiled into an email draft addressed to the business. Replaced the map placeholder with an embedded Google Map of Alexandra, Johannesburg (contact.js).
+- **27 Oct 2026, products.html:** Added JavaScript product search, price sorting, collapsible accordion series sections, a click-to-enlarge image lightbox, and scroll fade-in animations (products.js).
 - **31 Oct 2026, SEO:** Added keyword-based title tags and meta descriptions to all five pages, created robots.txt and sitemap.xml, and checked image alt text and heading structure. Keywords targeted: buy iPhone Johannesburg, pre-owned iPhone Johannesburg, iPhone price list South Africa.
 - **31 Oct 2026, Deployment:** Deployed the website on Netlify. Live site: https://stellar-gumdrop-c832cb.netlify.app. Updated robots.txt and sitemap.xml with the live address.
+- **1 Nov 2026, forms:** Set the form action attributes on both forms and added AJAX submission of the contact form using Formspree (contact.js), with the email draft kept as a fallback.
+- **1 Nov 2026, fixes:** Corrected the duplicated title tag on enquiry.html, added the missing contact form result styling to style.css, removed a stray duplicate contact.js from the css folder, and updated this README (Part 3 details, student number format, references).
 
 ## References
 - Apple Inc. (2026) *Apple South Africa*. Available at: https://www.apple.com/za/ (Accessed: 8 August 2026).
@@ -100,4 +125,5 @@ Following Part 1 feedback (92/100), the following corrections were made to `Prop
 - Mozilla Developer Network (2026) *Responsive images*. Available at: https://developer.mozilla.org/en-US/docs/Web/HTML/Responsive_images (Accessed: 2 September 2026).
 - The Independent Institute of Education (2026) *WEDE5020 Web Development Module Manual*. Johannesburg: The IIE.
 - Netlify (2026) *Netlify Drop*. Available at: https://app.netlify.com/drop (Accessed: 31 October 2026).
-
+- Formspree (2026) *Formspree documentation*. Available at: https://formspree.io (Accessed: 1 November 2026).
+-
