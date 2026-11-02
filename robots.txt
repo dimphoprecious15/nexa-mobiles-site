@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://stellar-gumdrop-c832cb.netlify.app/sitemap.xml
+Sitemap: https://soft-selkie-3e6417.netlify.app
